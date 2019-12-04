@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+
+  tasks:
+  - name: install tools-of-the-trade packages
+    when: ansible_os_family == 'Debian'
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - "vim"
+      - "emacs"
+    become: true
+
+

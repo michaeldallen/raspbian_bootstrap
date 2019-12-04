@@ -1,0 +1,6 @@
+#!/bin/sh
+
+git log --oneline --graph --decorate --color
+
+#EOF
+

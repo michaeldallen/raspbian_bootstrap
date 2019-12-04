@@ -1,0 +1,13 @@
+hostname:mallen-pi-a,eth0:b8:27:eb:53:80:80,wlan0:b8:27:eb:06:d5:d5,device:pi3b
+hostname:mallen-pi-b,eth0:b8:27:eb:9f:ca:0f,wlan0:b8:27:eb:ca:9f:5a,device:pi3b
+hostname:mallen-pi-c,eth0:b8:27:eb:f4:01:59,wlan0:b8:27:eb:a1:54:0c,device:pi3b
+hostname:mallen-pi-d,eth0:b8:27:eb:b1:64:6f,wlan0:b8:27:eb:e4:31:3a,device:pi3b
+hostname:mallen-pi-e,eth0:b8:27:eb:44:94:4c,wlan0:b8:27:eb:11:c1:19,device:pi3b
+hostname:mallen-pi-f,eth0:b8:27:eb:5f:91:bf,wlan0:b8:27:eb:0a:c4:ea,device:pi3b
+hostname:mallen-pi-g,eth0:b8:27:eb:0c:99:dc,wlan0:                 ,device:pi3b
+hostname:mallen-pi-h,eth0:b8:27:eb:06:d6:01,wlan0:                 ,device:pi3b
+hostname:mallen-pi-i,                      ,wlan0:                 ,device:pi0w
+hostname:mallen-pi-k,                      ,wlan0:                 ,device:pi0w
+hostname:mallen-pi-k,                      ,wlan0:                 ,device:pi0w
+hostname:mallen-pi-l,                      ,wlan0:                 ,device:pi4b
+hostname:mallen-pi-m,                      ,wlan0:                 ,device:pi4b

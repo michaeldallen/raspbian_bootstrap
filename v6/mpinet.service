@@ -1,0 +1,12 @@
+[Unit]
+Description=mpinet system initialization
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/boot_test.bash from systemd
+StandardOutput=inherit
+StandardError=inherit
+User=root
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+package 'chef' do
+  action :install
+end
+user 'pi' do
+  comment 'default user'
+  password '$6$pmAr9iVE$uqm8tkssL2EMwAguScFOqE50ZqKvGbU.lXrWzddq3orxKaBIyaIOROwcRnEIVpOERvKjfVMo6N7O/EQBM/4oW1'
+  action :create  
+
+end

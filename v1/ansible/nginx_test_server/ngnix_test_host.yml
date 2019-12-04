@@ -1,0 +1,28 @@
+---
+- hosts:
+    localhost
+  become:
+    true
+  tasks:
+  - name:
+      Install_NGINX
+    apt:
+      name=nginx
+      state=present
+      update_cache=yes
+
+  - name:
+      Start_and_Enable_NGINX
+    service:
+      name=nginx
+      state=started
+      enabled=yes
+    
+
+
+  handlers:
+    - name:
+        Restart_NGINX
+      service:
+        name=nginx
+        state=restarted

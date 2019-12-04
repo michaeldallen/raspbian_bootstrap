@@ -1,0 +1,18 @@
+---
+- hosts:
+    all
+
+  tasks:
+  - name:
+      Install_Mallen_Debian9_Packages
+    become:
+      true
+    apt:
+      update_cache:
+        yes
+      name:
+        "{{ item }}"
+      state:
+        present
+    with_items:
+      - locate

@@ -1,0 +1,26 @@
+---
+
+- hosts: all
+
+  tasks:
+  - name: set hostname
+    when: inv_eth0_mac == hostvars[inventory_hostname].ansible_eth0.macaddress
+    become: true
+    hostname:
+      name: "{{ inventory_hostname }}"
+
+#  - name: Get the discovered MAC address 
+#    debug:
+#      msg: "found fact mac: {{ hostvars[inventory_hostname].ansible_eth0.macaddress }}"
+#      
+#  - name: Print the MAC address from inventory
+#    debug:
+#      msg: "inventory mac: {{ inv_eth0_mac }}"
+#      
+#
+#  - name: try to self-identify
+#    when: inv_eth0_mac == hostvars[inventory_hostname].ansible_eth0.macaddress
+#    debug:
+#      msg: "here I am! {{ inventory_hostname }}"
+#      
+#

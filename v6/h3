@@ -1,0 +1,188 @@
+    1  apt-get update
+    2  apt-get -y dist-upgrade
+    3  shutdown -h now
+    4  apt-get update
+    5  curl
+    6  wget
+    7  git
+    8  python -V
+    9  python3 -V
+   10  apt-get dist-upgrad
+   11  apt-get dist-upgrade
+   12  apt autoremove
+   13  apt-cache search ansible
+   14  apt-get install ansible
+   15  ansible --version
+   16  ansible -m setup localhos
+   17  ansible -m setup localhost
+   18  cd
+   19  ls
+   20  emacs
+   21  apt-get install emacs
+   22  emacs boot_test.sh
+   23  cat boot_test.sh 
+   24  ls
+   25  emacs boot_test.sh
+   26  mv boot_test.sh boot_test.bash
+   27  touch boot_test.log
+   28  emacs boot_test.bash 
+   29  pwd
+   30  fg
+   31  chmod +x boot_test.bash
+   32  ./boot_test.bash 
+   33  cat boot_test.log 
+   34  which bash
+   35  crontab -e
+   36  set
+   37  localectl 
+   38  localectl  --help
+   39  localectl  list-keymaps
+   40  localectl  status
+   41  localectl  list-keymaps
+   42  localectl  list-locales
+   43  localectl  set-locale C.UTF-8
+   44  man ascii
+   45  man ascii > x
+   46  crontab -e
+   47  /bin/bash /root/boot_test.bash
+   48  cat boot_test.log 
+   49  reboot
+   50  cd
+   51  cat boot_test.log 
+   52  reboto
+   53  reboot
+   54  crontab -e
+   55  cd
+   56  emacs -nw boot_test.bash
+   57  ./boot_test.bash
+   58  cat boot_test.log 
+   59  ./boot_test.bash a b c
+   60  cat boot_test.log 
+   61  emacs -nw boot_test.bash
+   62  ./boot_test.bash a b c
+   63  cat boot_test.log 
+   64  emacs -nw boot_test.bash
+   65  ./boot_test.bash a b c
+   66  cat boot_test.log 
+   67  ./boot_test.bash a b c
+   68  cat boot_test.log 
+   69  emacs -nw boot_test.bash
+   70  ./boot_test.bash a b c
+   71  ./boot_test.bash a b c
+   72  ./boot_test.bash a b c
+   73  cat boot_test.log 
+   74  crontab -l 
+   75  vim boot_test.log 
+   76  emacs -nw boot_test.
+   77  emacs -nw boot_test.log 
+   78  reboot
+   79  cd
+   80  cat boot_test.log
+   81  emacs -nw mpinet.service
+   82  /bin/bash /root/boot_test.bash systemd
+   83  cat boot_test.log
+   84  /bin/bash /root/boot_test.bash systemd
+   85  emacs -nw mpinet.service
+   86  cp -vi  mpinet.service /etc/systemd/system
+   87  systemctl start mpinet
+   88  cat boot_test.log
+   89  systemctl start mpinet
+   90  cat boot_test.log
+   91  systemctl status mpinet
+   92  systemctl enable mpinet
+   93  reboot
+   94  cd
+   95  cat boot_test.log
+   96  journalctl 
+   97  journalctl  -b
+   98  journalctl  -b
+   99  journalctl  -b -u mpinet
+  100  journalctl  -b -u mpinet -o verbose
+  101  journalctl --list-boots
+  102  journalctl --list-boots
+  103  journalctl  -b -u mpinet -o verbose
+  104  journalctl  -b -u mpinet 
+  105  journalctl --list-boots
+  106  reboot
+  107  cd
+  108  cat boot_test.log
+  109  emacs boot_test.bash
+  110  emacs boot_test.bash
+  111  reboot
+  112  cd
+  113  cat boot_test.log
+  114  journalctl  -b -u mpinet 
+  115  journalctl  -u mpinet 
+  116  journalctl  -b -u mpinet 
+  117  journalctl  -b -u mpinet 
+  118  grep -r mpinet_boot_test_logger  /var/log
+  119  crontab -e
+  120  journalctl  -u mpinet 
+  121  vim boot_test.bash
+  122  apt-get install vim
+  123  locale -a
+  124  ansible
+  125  ansible -m locale_gen -a 'name=en_US.UTF-8 state=present'
+  126  ansible -m locale_gen -a 'name=en_US.UTF-8 state=present' localhost
+  127  locale -a
+  128  ansible -i localhost, -m locale_gen -a 'name=en_US.UTF-8 state=present' all
+  129  ansible  -m locale_gen -a 'name=en_US.UTF-8 state=present' all
+  130  ansible -i localhost, -m locale_gen -a 'name=en_US.UTF-8 state=present' localhost
+  131  ansible localhost -m locale_gen -a 'name=en_US.UTF-8 state=present' 
+  132  ansible all -m locale_gen -a 'name=en_US.UTF-8 state=present' 
+  133  ansible -i localhost, all -m locale_gen -a 'name=en_US.UTF-8 state=present' 
+  134  ansible -i localhost, -m locale_gen -a 'name=en_US.UTF-8 state=present' 
+  135  ansible -i localhost, --connection=local -m locale_gen -a 'name=en_US.UTF-8 state=present'  all
+  136  ansible  --connection=local -m locale_gen -a 'name=en_US.UTF-8 state=present'  
+  137  ansible  --connection=local -m locale_gen -a 'name=en_US.UTF-8 state=present'  localhost
+  138  ansible --inventory=localhost, --connection=local --module=locale_gen -a 'name=en_US.UTF-8 state=present'  all
+  139  ansible --inventory=localhost, --connection=local --module-name=locale_gen -a 'name=en_US.UTF-8 state=present'  all
+  140  ansible --inventory=localhost, --connection=local --module-name=locale_gen --args='name=en_US.UTF-8 state=present'  all
+  141  history > h1
+  142  ansible localhost  --inventory=localhost, --connection=local --module-name=locale_gen --args='name=en_US.UTF-8 state=present'  
+  143  history > h1
+  144  ansible localhost  --inventory=localhost, --connection=local --module-name=command --args='localectl set-locale LANG=en_US-UTF.8 LC_ALL=en_US.UTF-8'
+  145  ansible localhost  --inventory=localhost, --connection=local --module-name=command --args='localectl set-locale LANG=en_US-UTF.8 LC_ALL=en_US.UTF-8'
+  146  localectl set-locale LANG=en_US-UTF.8 LC_ALL=en_US.UTF-8
+  147  localectl set-locale LANG=en_US-UTF.8 
+  148  localectl set-locale LC_ALL=en_US.UTF-8
+  149  ansible localhost  --inventory=localhost, --connection=local --module-name=command --args='localectl set-locale LANG=en_US-UTF.8'
+  150  history > h2
+  151  diff h1 h2
+  152  man localectl
+  153   localectl list-keymaps
+  154  cat /etc/default/locale 
+  155  locale
+  156  ansible localhost  --inventory=localhost, --connection=local --module-name=command --args='localectl set-locale LC_ALL=C'
+  157  localectl set-locale LC_ALL=en_US
+  158  localectl set-locale LC_ALL=C
+  159  dpkg-reconfigure keyboard-layout
+  160  apt-cache search keyboard-layout
+  161  ansible localhost  --inventory=localhost, --connection=local --module-name=apt --args='name=console-data'
+  162  ansible localhost  --inventory=localhost, --connection=local --module-name=apt --args='name=console-data'
+  163  apt-get remove console-data
+  164  dpkg-reconfigure keyboard-layout
+  165  ansible localhost  --inventory=localhost, --connection=local --module-name=apt --args='name=console-data'
+  166  dpkg-reconfigure keyboard-layout
+  167  which raspi-config
+  168  less /usr/bin/raspi-config
+  169  cat /etc/default/keyboard 
+  170  cp  /etc/default/keyboard   /etc/default/keyboard.orig
+  171  less /usr/bin/raspi-config
+  172  raspi-config 
+  173  less /usr/bin/raspi-config
+  174  dpkg-reconfigure locales
+  175  less /usr/bin/raspi-config
+  176  grep LOCALE /usr/share/i18n/SUPPORTED 
+  177  dpkg-reconfigure locales
+  178  less /usr/bin/raspi-config
+  179  dpkg-reconfigure -f noninteractive locales
+  180  less /usr/bin/raspi-config
+  181  localectl 
+  182  apt-get install git
+  183  
+  184  git clone git@github.com:michaeldallen/raspbian_bootstrap.git
+  185  git clone https://github.com:michaeldallen/raspbian_bootstrap.git
+  186  git clone https://github.com/michaeldallen/raspbian_bootstrap.git
+  187  ls
+  188  history > h3

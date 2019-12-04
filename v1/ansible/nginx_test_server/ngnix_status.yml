@@ -1,0 +1,15 @@
+---
+- hosts:
+    localhost
+  tasks:
+    - name:
+        NGINX_Status
+      command:
+         systemctl status nginx
+    - name:
+        Verify_NGINX_Is_Listening_On_Port_80
+      wait_for:
+        port=80
+        timeout=1
+
+

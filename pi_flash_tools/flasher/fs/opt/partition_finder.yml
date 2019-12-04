@@ -1,0 +1,35 @@
+---
+
+- hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: enumerate block devices
+    command: lsblk --pairs
+    register: lsblk
+
+  - set_fact:
+      hit_list: []
+
+  - name: extract paratition list
+    set_fact:
+      partitions: "{{ lsblk.stdout | regex_findall('NAME=\"([^\"]*)\".*TYPE=\"part\"') | sort }}"
+
+  - loop: "{{ partitions }}"
+    include_role:
+      name: peek
+    vars:
+      partition: "{{ item }}"
+
+  - name: hits
+    debug:
+      msg: "{{ hit_list | length }}"
+
+  - name: hit list
+    debug:
+      msg: "{{ hit_list }}"
+    
+
+
+
+

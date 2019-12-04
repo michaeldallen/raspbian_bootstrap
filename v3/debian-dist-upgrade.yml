@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+
+  tasks:
+  - name: f with the cow
+    when: ansible_os_family == 'Debian'
+    apt:
+      upgrade: dist
+      update_cache: yes
+    become: true
+
+

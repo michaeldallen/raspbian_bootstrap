@@ -1,0 +1,34 @@
+    1  cd
+    2  apt-get install -y git
+    3  git https://github.com/michaeldallen/raspbian_bootstrap
+    4  git clone https://github.com/michaeldallen/raspbian_bootstrap
+    5  cd raspbian_bootstrap/
+    6  ls-l
+    7  ls -l
+    8  cd v6
+    9  apt-get update && apt-get -y dist-upgrade
+   10  history
+   11  ls
+   12  cat h3
+   13  apt-get install emacs
+   14  apt-get install emacs
+   15  emacs -nw Makefile
+   16  make unit.enable
+   17  make unit.log
+   18  cat /root/boot_test.log 
+   19  emacs -nw Makefile
+   20  git status
+   21  git add boot_test.bash mpinet.service 
+   22  ls-l
+   23  ls -l
+   24  git delete boot_test.log 
+   25  git rm boot_test.log 
+   26  git status
+   27  git diff
+   28  git diff --head
+   29  git diff --HEAD
+   30  git diff master
+   31  git status
+   32  git commit -m 'set up makefile for basic operations'
+   33  git push
+   34  history >h4

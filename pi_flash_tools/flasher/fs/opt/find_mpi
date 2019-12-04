@@ -1,0 +1,60 @@
+#!/bin/bash
+
+set -e
+set -u
+
+# find the name of each disk partition and look in each one for the tag file 'mdabone.host_device_map.v4' (or whatever the current version is)
+
+tagfile='mpinet.host_device_map.v4'
+
+list_interesting_partitions () {
+    lsblk --json \
+	| jq -r '.blockdevices[] | select(.type=="disk") | .name' \
+	| while read disk ; do
+	      lsblk --json "/dev/${disk}" \
+		  | jq -r '.blockdevices[].children[] | select(.type="part") | select(.name | startswith("sd")) | .name'
+	  done \
+	| sort
+}
+
+echo ""
+echo "interesting partitions:"
+list_interesting_partitions | sed 's/^/    /'
+
+
+list_interesting_partitions \
+    | while read part ; do
+	  
+	  echo ""
+	  
+	  echo "checking partition '/dev/${part}'"
+	  if findmnt "/dev/${part}" > /dev/null ; then
+	      echo "partition '/dev/${part}' mounted - skipping"
+	      continue
+	  fi
+
+	  tmpdir="$(mktemp --directory --tmpdir)"
+	  if ! mount "/dev/${part}" "${tmpdir}" > /dev/null 2>&1 ; then
+	      echo "cannot mount partition '/dev/${part}' - skipping"
+	      rmdir "${tmpdir}"
+	      continue
+	  fi
+
+	  if [ -r "${tmpdir}/${tagfile}" ] ; then
+	      disk=${part/%[0-9]*}
+	      echo "found tag file '${tagfile}'"
+	      echo "disk: ${disk}"
+	      echo "partiton: ${part}"
+	      echo "hmmm ..."
+	      echo "ls ${tmpdir}:"
+	      ls "${tmpdir}" | sed 's/^/    /'
+	      echo "*** likely raspbian target: '/dev/${disk}'"
+	  else
+	      echo "didn't find '/dev/${part}/${tagfile}'"
+	  fi
+	  umount "${tmpdir}"
+	  rmdir "${tmpdir}"
+
+      done
+
+#EOF

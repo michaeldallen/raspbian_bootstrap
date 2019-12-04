@@ -1,0 +1,13 @@
+[raspberry_pi:children]
+raspberry_pi_3
+
+[raspberry_pi_3]
+
+mallen-pi-a inv_eth0_mac=b8:27:eb:53:80:80 os=raspbian
+mallen-pi-b inv_eth0_mac=b8:27:eb:9f:ca:0f os=raspbian
+mallen-pi-c inv_eth0_mac=b8:27:eb:f4:01:59 os=raspbian
+mallen-pi-d inv_eth0_mac=b8:27:eb:b1:64:6f os=raspbian
+mallen-pi-e inv_eth0_mac=b8:27:eb:44:94:4c os=raspbian
+mallen-pi-f inv_eth0_mac=b8:27:eb:5f:91:bf os=raspbian
+mallen-pi-g inv_eth0_mac=b8:27:eb:0c:99:dc os=raspbian
+mallen-pi-h inv_eth0_mac=b8:27:eb:06:d6:01 os=raspbian

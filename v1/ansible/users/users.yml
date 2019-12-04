@@ -1,0 +1,24 @@
+---
+- hosts:
+    mallen-pi
+  become:
+    true
+  tasks:
+    - name:
+        Establish_Group_mda_As_GID_10000      
+      group:
+        name:
+          mda
+        gid:
+          10000
+
+    - name:
+        Establish_User_mda_As_UID_10000
+      user:
+        name:
+          mda
+        uid:
+          10000
+        group:
+          mda
+

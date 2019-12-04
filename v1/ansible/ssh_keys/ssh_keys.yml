@@ -1,0 +1,38 @@
+---
+- hosts:
+    mallen-pi
+
+  become:
+    true
+
+  tasks:
+    - name:
+        add_user_pi_public_keys_to_user_pi
+      authorized_key:
+        user:
+          pi
+        state:
+          present
+        key:
+          '{{ item }}'
+      with_file:
+        - public_keys/pi_at_mallen-pi-a.pub
+        - public_keys/pi_at_mallen-pi-b.pub
+        - public_keys/pi_at_mallen-pi-c.pub        
+
+    - name:
+        add_user_mda_public_keys_to_user_mda
+      authorized_key:
+        user:
+          mda
+        state:
+          present
+        key:
+          '{{ item }}'
+      with_file:
+        - public_keys/mda_at_mallen-pi-a.pub
+        - public_keys/mda_at_mallen-pi-b.pub
+        - public_keys/mda_at_mallen-pi-c.pub        
+
+
+

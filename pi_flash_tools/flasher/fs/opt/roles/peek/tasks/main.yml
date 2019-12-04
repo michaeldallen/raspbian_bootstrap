@@ -1,0 +1,49 @@
+---
+
+- name: list target partition
+  debug:
+    msg: "{{ partition }}"
+
+
+- name: create temporary mount point
+  tempfile:
+    state: directory
+    suffix: .biteme
+  register: temp_mount
+
+
+- debug:
+    msg: "temporary mount point: {{ temp_mount.path }}"
+
+- name: mount target partition
+  command: mount "/dev/{{ partition }}" "{{ temp_mount.path }}"
+  args:
+    warn: no
+  ignore_errors: yes
+  register: mount
+
+
+- name: peek
+  find:
+    paths: "{{ temp_mount.path }}"
+    patterns: mpinet.host_device_map.v4
+    recurse: no
+  register: peek
+  when: mount is not failed
+
+- name: record partition as a hit
+  set_fact:
+    hit_list: "{{ hit_list }} + [ '{{ partition }}' ]"
+  when: mount is not failed and peek.matched == 1
+
+
+- name: unmount target partition
+  command: umount "{{ temp_mount.path }}"
+  when: mount is not failed
+
+- name: clean up temporary mount point
+  file:
+    path: "{{ temp_mount.path }}"
+    state: absent
+
+
