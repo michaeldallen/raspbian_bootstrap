@@ -1,6 +1,6 @@
 #BOF
 
-FROM ubuntu:xenial
+FROM ubuntu:noble
 
 # Debian stuff
 #
