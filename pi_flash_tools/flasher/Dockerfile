@@ -1,6 +1,6 @@
 #BOF
 
-FROM ubuntu:noble
+FROM ubuntu:resolute
 
 # Debian stuff
 #
